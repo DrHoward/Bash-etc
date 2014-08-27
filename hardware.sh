@@ -1,0 +1,1 @@
+echo; grep "model name" /proc/cpuinfo | cut -d' ' -f3- | uniq; echo $(grep "cpu cores" /proc/cpuinfo | sort | uniq)" x"$(grep "physical id" /proc/cpuinfo | sort | uniq | wc -l)$(if grep " ht " /proc/cpuinfo &>/dev/null; then echo " w/ HT"; fi); echo; free -m; echo; iostat -x | grep -A20 --color=never "avg-cpu"; df -h; 

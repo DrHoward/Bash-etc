@@ -1,0 +1,1 @@
+echo; uname -a; cat /etc/redhat-release 2>/dev/null; cat /var/cpanel/sysinfo.config | grep -v \# | egrep "rpm|release" 2>/dev/null; /usr/local/cpanel/cpanel -V; echo; httpd -v; httpd -V | grep --color=never "MPM" | head -1; echo; php -v; /usr/local/cpanel/bin/rebuild_phpconf --current; echo; mysql -V; echo; /scripts/setupmailserver --current; /scripts/setupnameserver --current
